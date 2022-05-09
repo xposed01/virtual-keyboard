@@ -1,0 +1,261 @@
+const txtInput = document.querySelector('.text');
+const keys = document.querySelectorAll('.key');
+const shiftLeft = document.querySelector('.shift-left');
+const shiftRight = document.querySelector('.shift-right');
+const ctrlLeft = document.querySelector('.ctrl-left');
+const ctrlRight = document.querySelector('.ctrl-right');
+const altLeft = document.querySelector('.alt-left');
+const altRight = document.querySelector('.alt-right');
+const space = document.querySelector('.space');
+const tab = document.querySelector('.tab');
+const capsLock = document.querySelector('.capslock');
+const deleteKey = document.querySelector('.delete');
+const windowsKey = document.querySelector('.windowsKey');
+const arrowUp = document.querySelector('.arrowUp');
+const arrowDown = document.querySelector('.arrowDown');
+const arrowLeft = document.querySelector('.arrowLeft');
+const arrowRight = document.querySelector('.arrowRight');
+const keyboard = document.querySelector('.keyboard');
+
+keyboard.addEventListener('mousedown', (event) => {
+  if (event.target.closest('.key')) {
+    event.target.closest('.key').classList.remove('key-inactive');
+    event.target.closest('.key').classList.add('key-active');
+
+    if (event.target.closest('.tab')) {
+      txtInput.value += '\t';
+      return;
+    }
+    if (event.target.closest('.enter')) {
+      txtInput.value += '\n';
+      return;
+    }
+    if (event.target.closest('.delete')) {
+      txtInput.value -= '';
+      return;
+    }
+
+    txtInput.value += event.target.closest('.key').id;
+  }
+});
+
+keyboard.addEventListener('mouseup', (event) => {
+  if (event.target.closest('.key')) {
+    event.target.closest('.key').classList.remove('key-active');
+    event.target.closest('.key').classList.add('key-inactive');
+  }
+});
+
+// добавление атрибутов
+
+for (let i = 0; i < keys.length; i += 1) {
+  keys[i].setAttribute('id', keys[i].innerText);
+  keys[i].setAttribute('uppercase', keys[i].innerText.toUpperCase());
+}
+
+// анимация нажатия
+
+window.addEventListener('keydown', (event) => {
+  console.log(event.code);
+  txtInput.focus();
+  if (event.code === 'Space') {
+    space.classList.remove('key-inactive');
+    space.classList.add('key-active');
+    return;
+  }
+  if (event.code === 'CapsLock') {
+    capsLock.classList.remove('key-inactive');
+    capsLock.classList.add('key-active');
+    return;
+  }
+  if (event.code === 'Tab') {
+    txtInput.focus();
+    tab.classList.remove('key-inactive');
+    tab.classList.add('key-active');
+    return;
+  }
+  if (event.code === 'Delete') {
+    deleteKey.classList.remove('key-inactive');
+    deleteKey.classList.add('key-active');
+    return;
+  }
+  if (event.code === 'MetaLeft') {
+    windowsKey.classList.remove('key-inactive');
+    windowsKey.classList.add('key-active');
+    return;
+  }
+  if (event.code === 'ShiftLeft') {
+    shiftLeft.classList.remove('key-inactive');
+    shiftLeft.classList.add('key-active');
+    return;
+  }
+  if (event.code === 'ShiftRight') {
+    shiftRight.classList.remove('key-inactive');
+    shiftRight.classList.add('key-active');
+    return;
+  }
+  if (event.code === 'ControlLeft') {
+    ctrlLeft.classList.remove('key-inactive');
+    ctrlLeft.classList.add('key-active');
+    return;
+  }
+  if (event.code === 'ControlRight') {
+    ctrlRight.classList.remove('key-inactive');
+    ctrlRight.classList.add('key-active');
+    return;
+  }
+  if (event.code === 'AltLeft') {
+    altLeft.classList.remove('key-inactive');
+    altLeft.classList.add('key-active');
+    return;
+  }
+  if (event.code === 'AltRight') {
+    altRight.classList.remove('key-inactive');
+    altRight.classList.add('key-active');
+    return;
+  }
+  if (event.code === 'ArrowUp') {
+    arrowUp.classList.remove('key-inactive');
+    arrowUp.classList.add('key-active');
+    return;
+  }
+  if (event.code === 'ArrowDown') {
+    arrowDown.classList.remove('key-inactive');
+    arrowDown.classList.add('key-active');
+    return;
+  }
+  if (event.code === 'ArrowLeft') {
+    arrowLeft.classList.remove('key-inactive');
+    arrowLeft.classList.add('key-active');
+    return;
+  }
+  if (event.code === 'ArrowRight') {
+    arrowRight.classList.remove('key-inactive');
+    arrowRight.classList.add('key-active');
+    return;
+  }
+
+  // eslint-disable-next-line prefer-const
+  let keyPressDown = document.getElementById(event.key);
+  keyPressDown.classList.remove('key-inactive');
+  keyPressDown.classList.add('key-active');
+});
+
+// eslint-disable-next-line consistent-return
+window.addEventListener('keyup', (event) => {
+  txtInput.focus();
+  if (event.code === 'Space') {
+    space.classList.remove('key-active');
+    space.classList.add('key-inactive');
+    return setTimeout(() => {
+      space.classList.remove('key-inactive');
+    }, 300);
+  }
+  if (event.code === 'CapsLock') {
+    capsLock.classList.remove('key-active');
+    capsLock.classList.add('key-inactive');
+    return setTimeout(() => {
+      capsLock.classList.remove('key-inactive');
+    }, 300);
+  }
+  if (event.code === 'Tab') {
+    tab.classList.remove('key-active');
+    tab.classList.add('key-inactive');
+    return setTimeout(() => {
+      tab.classList.remove('key-inactive');
+    }, 300);
+  }
+  if (event.code === 'Delete') {
+    deleteKey.classList.remove('key-active');
+    deleteKey.classList.add('key-inactive');
+    return setTimeout(() => {
+      deleteKey.classList.remove('key-inactive');
+    }, 300);
+  }
+  if (event.code === 'MetaLeft') {
+    windowsKey.classList.remove('key-active');
+    windowsKey.classList.add('key-inactive');
+    return setTimeout(() => {
+      windowsKey.classList.remove('key-inactive');
+    }, 300);
+  }
+  if (event.code === 'ShiftLeft') {
+    shiftLeft.classList.remove('key-active');
+    shiftLeft.classList.add('key-inactive');
+    return setTimeout(() => {
+      shiftLeft.classList.remove('key-inactive');
+    }, 300);
+  }
+  if (event.code === 'ShiftRight') {
+    shiftRight.classList.remove('key-active');
+    shiftRight.classList.add('key-inactive');
+    return setTimeout(() => {
+      shiftRight.classList.remove('key-inactive');
+    }, 300);
+  }
+  if (event.code === 'ControlLeft') {
+    ctrlLeft.classList.remove('key-active');
+    ctrlLeft.classList.add('key-inactive');
+    return setTimeout(() => {
+      ctrlLeft.classList.remove('key-inactive');
+    }, 300);
+  }
+  if (event.code === 'ControlRight') {
+    ctrlRight.classList.remove('key-active');
+    ctrlRight.classList.add('key-inactive');
+    return setTimeout(() => {
+      ctrlRight.classList.remove('key-inactive');
+    }, 300);
+  }
+  if (event.code === 'AltLeft') {
+    altLeft.classList.remove('key-active');
+    altLeft.classList.add('key-inactive');
+    return setTimeout(() => {
+      altLeft.classList.remove('key-inactive');
+    }, 300);
+  }
+  if (event.code === 'AltRight') {
+    altRight.classList.remove('key-active');
+    altRight.classList.add('key-inactive');
+    return setTimeout(() => {
+      altRight.classList.remove('key-inactive');
+    }, 300);
+  }
+  if (event.code === 'ArrowUp') {
+    arrowUp.classList.remove('key-active');
+    arrowUp.classList.add('key-inactive');
+    return setTimeout(() => {
+      arrowUp.classList.remove('key-inactive');
+    }, 300);
+  }
+  if (event.code === 'ArrowDown') {
+    arrowDown.classList.remove('key-active');
+    arrowDown.classList.add('key-inactive');
+    return setTimeout(() => {
+      arrowDown.classList.remove('key-inactive');
+    }, 300);
+  }
+  if (event.code === 'ArrowLeft') {
+    arrowLeft.classList.remove('key-active');
+    arrowLeft.classList.add('key-inactive');
+    return setTimeout(() => {
+      arrowLeft.classList.remove('key-inactive');
+    }, 300);
+  }
+  if (event.code === 'ArrowRight') {
+    arrowRight.classList.remove('key-active');
+    arrowRight.classList.add('key-inactive');
+    return setTimeout(() => {
+      arrowRight.classList.remove('key-inactive');
+    }, 300);
+  }
+
+  // eslint-disable-next-line prefer-const
+  let keyPressUp = document.getElementById(event.key);
+
+  keyPressUp.classList.remove('key-active');
+  keyPressUp.classList.add('key-inactive');
+  setTimeout(() => {
+    keyPressUp.classList.remove('key-inactive');
+  }, 300);
+});
