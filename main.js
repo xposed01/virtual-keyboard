@@ -1,50 +1,50 @@
-let body = document.querySelector('body');
-let txtInput = document.querySelector('.text');
-let keys = document.querySelectorAll('.key');
-let shiftLeft = document.querySelector('.shift-left');
-let shiftRight = document.querySelector('.shift-right');
-let ctrlLeft = document.querySelector('.ctrl-left');
-let ctrlRight = document.querySelector('.ctrl-right');
-let altLeft = document.querySelector('.alt-left');
-let altRight = document.querySelector('.alt-right');
-let space = document.querySelector('.space');
-let tab = document.querySelector('.tab');
-let capsLock = document.querySelector('.capslock');
-let deleteKey = document.querySelector('.delete');
-let windowsKey = document.querySelector('.windowsKey');
-let arrowUp = document.querySelector('.arrowUp');
-let arrowDown = document.querySelector('.arrowDown');
-let arrowLeft = document.querySelector('.arrowLeft');
-let arrowRight = document.querySelector('.arrowRight');
-let keyboard = document.querySelector('.keyboard');
-
-
-
-keyboard.addEventListener('click', (event) => {
-  if (event.target.closest('key')) {
-    txtInput.value += event.target.id;
-  }
-});
+const txtInput = document.querySelector('.text');
+const keys = document.querySelectorAll('.key');
+const shiftLeft = document.querySelector('.shift-left');
+const shiftRight = document.querySelector('.shift-right');
+const ctrlLeft = document.querySelector('.ctrl-left');
+const ctrlRight = document.querySelector('.ctrl-right');
+const altLeft = document.querySelector('.alt-left');
+const altRight = document.querySelector('.alt-right');
+const space = document.querySelector('.space');
+const tab = document.querySelector('.tab');
+const capsLock = document.querySelector('.capslock');
+const deleteKey = document.querySelector('.delete');
+const windowsKey = document.querySelector('.windowsKey');
+const arrowUp = document.querySelector('.arrowUp');
+const arrowDown = document.querySelector('.arrowDown');
+const arrowLeft = document.querySelector('.arrowLeft');
+const arrowRight = document.querySelector('.arrowRight');
+const keyboard = document.querySelector('.keyboard');
 
 keyboard.addEventListener('mousedown', (event) => {
-  
-  if (event.target.classList.contains('key')) {
-    txtInput.value += event.target.id;
-    event.target.classList.remove('key-inactive')
-    event.target.classList.add('key-active');
+  if (event.target.closest('.key')) {
+    event.target.closest('.key').classList.remove('key-inactive');
+    event.target.closest('.key').classList.add('key-active');
+
+    if (event.target.closest('.tab')) {
+      txtInput.value += '\t';
+      return;
+    }
+    if (event.target.closest('.enter')) {
+      txtInput.value += '\n';
+      return;
+    }
+    if (event.target.closest('.delete')) {
+      txtInput.value -= '';
+      return;
+    }
+
+    txtInput.value += event.target.closest('.key').id;
   }
 });
 
 keyboard.addEventListener('mouseup', (event) => {
-  if (event.target.classList.contains('key')) {
-    event.target.classList.remove('key-active');
-    event.target.classList.add('key-inactive');
+  if (event.target.closest('.key')) {
+    event.target.closest('.key').classList.remove('key-active');
+    event.target.closest('.key').classList.add('key-inactive');
   }
 });
-
-
-
-
 
 // добавление атрибутов
 
@@ -55,7 +55,6 @@ for (let i = 0; i < keys.length; i += 1) {
 
 // анимация нажатия
 
-/* 
 window.addEventListener('keydown', (event) => {
   console.log(event.code);
   txtInput.focus();
@@ -142,7 +141,7 @@ window.addEventListener('keydown', (event) => {
   keyPressDown.classList.add('key-active');
 });
 
-
+// eslint-disable-next-line consistent-return
 window.addEventListener('keyup', (event) => {
   txtInput.focus();
   if (event.code === 'Space') {
@@ -251,7 +250,6 @@ window.addEventListener('keyup', (event) => {
     }, 300);
   }
 
-
   // eslint-disable-next-line prefer-const
   let keyPressUp = document.getElementById(event.key);
 
@@ -261,32 +259,3 @@ window.addEventListener('keyup', (event) => {
     keyPressUp.classList.remove('key-inactive');
   }, 300);
 });
-
- */
-
-
-
-
-
-
-
-
-
-
-/* window.addEventListener('keydown', (event) => {
-  for (let i = 0; i < keys.length; i += 1) {
-    if (event.key === keys[i].getAttribute('id') || event.key === keys[i].getAttribute('uppercase')) {
-      keys[i].classList.remove('key-inactive')
-      keys[i].classList.add('key-active');
-    }
-  }
-});
-
-window.addEventListener('keyup', (event) => {
-  for (let i = 0; i < keys.length; i += 1) {
-    if (event.key === keys[i].getAttribute('id') || event.key === keys[i].getAttribute('uppercase')) {
-      keys[i].classList.remove('key-active');
-      keys[i].classList.add('key-inactive');
-    }
-  }
-}); */
