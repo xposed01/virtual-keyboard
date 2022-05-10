@@ -536,6 +536,17 @@ window.onload = function onLoader() {
       return;
     }
 
+    if (event.key === 'Backspace') {
+      document.getElementById('Backspace').classList.remove('key-inactive');
+      document.getElementById('Backspace').classList.add('key-active');
+      return;
+    }
+    if (event.key === 'Enter') {
+      document.getElementById('Enter').classList.remove('key-inactive');
+      document.getElementById('Enter').classList.add('key-active');
+      return;
+    }
+
     const keyPressDown = document.getElementById(event.key.toLowerCase());
     keyPressDown.classList.remove('key-inactive');
     keyPressDown.classList.add('key-active');
@@ -781,6 +792,19 @@ window.onload = function onLoader() {
     if (event.key === '?') {
       document.getElementById('/').classList.remove('key-active');
       document.getElementById('/').classList.add('key-inactive');
+      return setTimeout(() => {
+      }, 300);
+    }
+
+    if (event.key === 'Backspace') {
+      document.getElementById('Backspace').classList.remove('key-active');
+      document.getElementById('Backspace').classList.add('key-inactive');
+      return setTimeout(() => {
+      }, 300);
+    }
+    if (event.key === 'Enter') {
+      document.getElementById('Enter').classList.remove('key-active');
+      document.getElementById('Enter').classList.add('key-inactive');
       return setTimeout(() => {
       }, 300);
     }
