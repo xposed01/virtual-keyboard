@@ -303,8 +303,7 @@ window.onload = function onLoader() {
     if (event.code === 'F12' || event.code === 'F11') {
       return;
     }
-
-    const keyPressDown = document.getElementById(event.key);
+    const keyPressDown = document.getElementById(event.key.toLowerCase());
     keyPressDown.classList.remove('key-inactive');
     keyPressDown.classList.add('key-active');
   });
@@ -425,8 +424,12 @@ window.onload = function onLoader() {
       return setTimeout(() => {
       }, 300);
     }
-    const keyPressUp = document.getElementById(event.key);
+    const keyPressUp = document.getElementById(event.key.toLowerCase());
 
+    if (event.code === 'CapsLock') {
+      return setTimeout(() => {
+      }, 300);
+    }
     keyPressUp.classList.remove('key-active');
     keyPressUp.classList.add('key-inactive');
     return setTimeout(() => {
