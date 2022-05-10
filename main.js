@@ -100,7 +100,7 @@ const arrowLeft = document.querySelector('.arrowLeft');
 const arrowRight = document.querySelector('.arrowRight');
 const keyboard = document.querySelector('.keyboard');
 
-window.onload = function () {
+window.onload = function onLoader() {
   // события мыши
 
   keyboard.addEventListener('mousedown', (event) => {
@@ -116,7 +116,10 @@ window.onload = function () {
         txtInput.value += '\n';
         return;
       }
-      if (event.target.closest('.shift-left, .shift-right, .windowsKey, .ctrl-left, .ctrl-right, .alt-left, .alt-right')) {
+      if (event.target.closest('.shift-left, .shift-right, .windowsKey')) {
+        return;
+      }
+      if (event.target.closest('.ctrl-left, .ctrl-right, .alt-left, .alt-right')) {
         return;
       }
       if (event.target.closest('.delete')) {
@@ -145,7 +148,6 @@ window.onload = function () {
   // анимация нажатия
 
   window.addEventListener('keydown', (event) => {
-    console.log(event.code);
     txtInput.focus();
     if (event.code === 'Space') {
       space.classList.remove('key-inactive');
@@ -348,4 +350,4 @@ window.onload = function () {
       keyPressUp.classList.remove('key-inactive');
     }, 300);
   });
-}
+};
