@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  transition: .2s;
+  font-size: 18px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  margin: 0 20px;
+}
+
+.text {
+  width: 1000px;
+  margin-bottom: 100px;
+  font-size: 25px;
+  border: none;
+  box-shadow: 0px 5px 17px 1px rgba(34, 60, 80, 0.10);
+
+  &:focus {
+    outline: none;
+    box-shadow: 0px 8px 17px 1px rgba(34, 60, 80, 0.10);
+  }
+}
+
+.keyboard {
+  min-width: 768px;
+  max-width: 1000px;
+  width: 100%;
+  background-color: rgb(231, 231, 231);
+  position: relative;
+  box-shadow: 0px 0px 17px 4px rgba(34, 60, 80, 0.15);
+}
+
+.kb-row {
+  display: flex;
+}
+
+.key {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  background-color: rgb(255, 255, 255);
+  margin: 4px;
+  transition: .2s;
+  user-select: none;
+
+  &:hover {
+    cursor: pointer;
+    color: #fff;
+    background-color: rgb(146, 140, 231);
+  }
+}
+
+.backspace {
+  width: 123px;
+}
+
+.tab {
+  width: 90px;
+}
+
+.capslock {
+  width: 96px;
+}
+
+.enter {
+  width: 140px;
+}
+
+.shift-left,
+.shift-right {
+  width: 132px;
+}
+
+.ctrl {
+  width: 70px;
+}
+
+.space {
+  width: 495px;
+}
+
+.key-moded {
+  background-color: rgb(164, 168, 199);
+}
+
+.key-active {
+  border-radius: 30px;
+  box-shadow: 0px 0px 17px 4px rgba(34, 60, 80, 0.15);
+  color: #fff;
+  background-color: rgb(106, 97, 235);
+
+  &:hover {
+    border-radius: 30px;
+    box-shadow: 0px 0px 17px 4px rgba(34, 60, 80, 0.15);
+    color: #fff;
+    background-color: rgb(106, 97, 235);
+  }
+}
+
+.description {
+  margin-top: 50px;
+  color: rgb(201, 201, 201);
+}
