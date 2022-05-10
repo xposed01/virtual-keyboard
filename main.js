@@ -104,7 +104,7 @@ window.onload = function onLoader() {
   // события мыши
   keyboard.addEventListener('mousedown', (event) => {
     if (event.target.closest('.key')) {
-      //capslock
+      // capslock
       if (event.target.closest('.capslock')) {
         capsLock.classList.toggle('key-active');
         if (!capsLock.classList.contains('key-active')) {
@@ -189,7 +189,7 @@ window.onload = function onLoader() {
       return;
     }
     if (event.code === 'CapsLock') {
-      //capslock
+      // capslock
       capsLock.classList.toggle('key-active');
       if (!capsLock.classList.contains('key-active')) {
         for (let i = 0; i < keys.length; i += 1) {
