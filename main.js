@@ -226,13 +226,11 @@ window.onload = function onLoader() {
       return;
     }
 
-    // eslint-disable-next-line prefer-const
-    let keyPressDown = document.getElementById(event.key);
+    const keyPressDown = document.getElementById(event.key);
     keyPressDown.classList.remove('key-inactive');
     keyPressDown.classList.add('key-active');
   });
 
-  // eslint-disable-next-line consistent-return
   window.addEventListener('keyup', (event) => {
     txtInput.focus();
     if (event.code === 'Space') {
@@ -341,12 +339,11 @@ window.onload = function onLoader() {
       }, 300);
     }
 
-    // eslint-disable-next-line prefer-const
-    let keyPressUp = document.getElementById(event.key);
+    const keyPressUp = document.getElementById(event.key);
 
     keyPressUp.classList.remove('key-active');
     keyPressUp.classList.add('key-inactive');
-    setTimeout(() => {
+    return setTimeout(() => {
       keyPressUp.classList.remove('key-inactive');
     }, 300);
   });
