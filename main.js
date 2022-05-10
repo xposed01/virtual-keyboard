@@ -151,6 +151,9 @@ window.onload = function onLoader() {
         return;
       }
       if (event.target.closest('.backspace')) {
+        if (txtInput.selectionStart === 0) {
+          return;
+        }
         if (txtInput.selectionStart === txtInput.selectionEnd) {
           txtInput.setRangeText('', txtInput.selectionStart - 1, txtInput.selectionEnd);
         }
