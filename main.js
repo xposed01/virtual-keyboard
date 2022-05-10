@@ -189,8 +189,22 @@ window.onload = function onLoader() {
       return;
     }
     if (event.code === 'CapsLock') {
-      capsLock.classList.remove('key-inactive');
-      capsLock.classList.add('key-active');
+      //capslock
+      capsLock.classList.toggle('key-active');
+      if (!capsLock.classList.contains('key-active')) {
+        for (let i = 0; i < keys.length; i += 1) {
+          if (!keys[i].classList.contains('key-moded')) {
+            keys[i].innerText = keys[i].innerText.toLowerCase();
+          }
+        }
+      } else {
+        for (let i = 0; i < keys.length; i += 1) {
+          if (!keys[i].classList.contains('key-moded')) {
+            keys[i].innerText = keys[i].getAttribute('uppercase');
+          }
+        }
+      }
+
       return;
     }
     if (event.code === 'Tab') {
@@ -274,13 +288,7 @@ window.onload = function onLoader() {
         space.classList.remove('key-inactive');
       }, 300);
     }
-    if (event.code === 'CapsLock') {
-      capsLock.classList.remove('key-active');
-      capsLock.classList.add('key-inactive');
-      return setTimeout(() => {
-        capsLock.classList.remove('key-inactive');
-      }, 300);
-    }
+
     if (event.code === 'Tab') {
       tab.classList.remove('key-active');
       tab.classList.add('key-inactive');
