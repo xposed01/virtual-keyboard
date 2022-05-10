@@ -79,6 +79,7 @@ body.insertAdjacentHTML('afterbegin', `
     <div class="key ctrl-right key-moded"><span>Ctrl</span></div>
   </div>
   </div>
+  <div class="description">Клавиатура создана в операционной системе <b>Windows</b></div>
   </div>`);
 
 const txtInput = document.querySelector('.text');

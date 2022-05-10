@@ -36,6 +36,7 @@ body {
 }
 
 .keyboard {
+  min-width: 768px;
   max-width: 1000px;
   width: 100%;
   background-color: rgb(231, 231, 231);
@@ -110,4 +111,9 @@ body {
     color: #fff;
     background-color: rgb(106, 97, 235);
   }
+}
+
+.description {
+  margin-top: 50px;
+  color: rgb(201, 201, 201);
 }
