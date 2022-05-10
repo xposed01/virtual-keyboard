@@ -229,11 +229,21 @@ window.onload = function onLoader() {
     if (event.code === 'ShiftLeft') {
       shiftLeft.classList.remove('key-inactive');
       shiftLeft.classList.add('key-active');
+      for (let i = 0; i < keys.length; i += 1) {
+        if (!keys[i].classList.contains('key-moded')) {
+          keys[i].innerText = keys[i].getAttribute('uppercase');
+        }
+      }
       return;
     }
     if (event.code === 'ShiftRight') {
       shiftRight.classList.remove('key-inactive');
       shiftRight.classList.add('key-active');
+      for (let i = 0; i < keys.length; i += 1) {
+        if (!keys[i].classList.contains('key-moded')) {
+          keys[i].innerText = keys[i].getAttribute('uppercase');
+        }
+      }
       return;
     }
     if (event.code === 'ControlLeft') {
@@ -319,6 +329,11 @@ window.onload = function onLoader() {
     if (event.code === 'ShiftLeft') {
       shiftLeft.classList.remove('key-active');
       shiftLeft.classList.add('key-inactive');
+      for (let i = 0; i < keys.length; i += 1) {
+        if (!keys[i].classList.contains('key-moded')) {
+          keys[i].innerText = keys[i].innerText.toLowerCase();
+        }
+      }
       return setTimeout(() => {
         shiftLeft.classList.remove('key-inactive');
       }, 300);
@@ -326,6 +341,11 @@ window.onload = function onLoader() {
     if (event.code === 'ShiftRight') {
       shiftRight.classList.remove('key-active');
       shiftRight.classList.add('key-inactive');
+      for (let i = 0; i < keys.length; i += 1) {
+        if (!keys[i].classList.contains('key-moded')) {
+          keys[i].innerText = keys[i].innerText.toLowerCase();
+        }
+      }
       return setTimeout(() => {
         shiftRight.classList.remove('key-inactive');
       }, 300);
