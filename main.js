@@ -234,6 +234,69 @@ window.onload = function onLoader() {
       for (let i = 0; i < keys.length; i += 1) {
         if (!keys[i].classList.contains('key-moded')) {
           keys[i].innerText = keys[i].getAttribute('uppercase');
+          if (keys[i].id === '`') {
+            keys[i].innerText = '~';
+          }
+          if (keys[i].id === '1') {
+            keys[i].innerText = '!';
+          }
+          if (keys[i].id === '2') {
+            keys[i].innerText = '@';
+          }
+          if (keys[i].id === '3') {
+            keys[i].innerText = '#';
+          }
+          if (keys[i].id === '4') {
+            keys[i].innerText = '$';
+          }
+          if (keys[i].id === '5') {
+            keys[i].innerText = '%';
+          }
+          if (keys[i].id === '6') {
+            keys[i].innerText = '^';
+          }
+          if (keys[i].id === '7') {
+            keys[i].innerText = '&';
+          }
+          if (keys[i].id === '8') {
+            keys[i].innerText = '*';
+          }
+          if (keys[i].id === '9') {
+            keys[i].innerText = '(';
+          }
+          if (keys[i].id === '0') {
+            keys[i].innerText = ')';
+          }
+          if (keys[i].id === '-') {
+            keys[i].innerText = '_';
+          }
+          if (keys[i].id === '=') {
+            keys[i].innerText = '+';
+          }
+          if (keys[i].id === '[') {
+            keys[i].innerText = '{';
+          }
+          if (keys[i].id === ']') {
+            keys[i].innerText = '}';
+          }
+          if (keys[i].id === '\\') {
+            keys[i].innerText = '|';
+          }
+          if (keys[i].id === ';') {
+            keys[i].innerText = ':';
+          }
+          if (keys[i].id === "'") {
+            keys[i].innerText = '"';
+          }
+          if (keys[i].id === ',') {
+            keys[i].innerText = '<';
+          }
+          if (keys[i].id === '.') {
+            keys[i].innerText = '>';
+          }
+          if (keys[i].id === '/') {
+            keys[i].innerText = '?';
+          }
         }
       }
       return;
@@ -244,6 +307,69 @@ window.onload = function onLoader() {
       for (let i = 0; i < keys.length; i += 1) {
         if (!keys[i].classList.contains('key-moded')) {
           keys[i].innerText = keys[i].getAttribute('uppercase');
+          if (keys[i].id === '`') {
+            keys[i].innerText = '~';
+          }
+          if (keys[i].id === '1') {
+            keys[i].innerText = '!';
+          }
+          if (keys[i].id === '2') {
+            keys[i].innerText = '@';
+          }
+          if (keys[i].id === '3') {
+            keys[i].innerText = '#';
+          }
+          if (keys[i].id === '4') {
+            keys[i].innerText = '$';
+          }
+          if (keys[i].id === '5') {
+            keys[i].innerText = '%';
+          }
+          if (keys[i].id === '6') {
+            keys[i].innerText = '^';
+          }
+          if (keys[i].id === '7') {
+            keys[i].innerText = '&';
+          }
+          if (keys[i].id === '8') {
+            keys[i].innerText = '*';
+          }
+          if (keys[i].id === '9') {
+            keys[i].innerText = '(';
+          }
+          if (keys[i].id === '0') {
+            keys[i].innerText = ')';
+          }
+          if (keys[i].id === '-') {
+            keys[i].innerText = '_';
+          }
+          if (keys[i].id === '=') {
+            keys[i].innerText = '+';
+          }
+          if (keys[i].id === '[') {
+            keys[i].innerText = '{';
+          }
+          if (keys[i].id === ']') {
+            keys[i].innerText = '}';
+          }
+          if (keys[i].id === '\\') {
+            keys[i].innerText = '|';
+          }
+          if (keys[i].id === ';') {
+            keys[i].innerText = ':';
+          }
+          if (keys[i].id === "'") {
+            keys[i].innerText = '"';
+          }
+          if (keys[i].id === ',') {
+            keys[i].innerText = '<';
+          }
+          if (keys[i].id === '.') {
+            keys[i].innerText = '>';
+          }
+          if (keys[i].id === '/') {
+            keys[i].innerText = '?';
+          }
         }
       }
       return;
@@ -303,6 +429,113 @@ window.onload = function onLoader() {
     if (event.code === 'F12' || event.code === 'F11') {
       return;
     }
+
+    if (event.key === '~') {
+      document.getElementById('`').classList.remove('key-inactive');
+      document.getElementById('`').classList.add('key-active');
+      return;
+    }
+    if (event.key === '!') {
+      document.getElementById('1').classList.remove('key-inactive');
+      document.getElementById('1').classList.add('key-active');
+      return;
+    }
+    if (event.key === '@') {
+      document.getElementById('2').classList.remove('key-inactive');
+      document.getElementById('2').classList.add('key-active');
+      return;
+    }
+    if (event.key === '#') {
+      document.getElementById('3').classList.remove('key-inactive');
+      document.getElementById('3').classList.add('key-active');
+      return;
+    }
+    if (event.key === '$') {
+      document.getElementById('4').classList.remove('key-inactive');
+      document.getElementById('4').classList.add('key-active');
+      return;
+    }
+    if (event.key === '%') {
+      document.getElementById('5').classList.remove('key-inactive');
+      document.getElementById('5').classList.add('key-active');
+      return;
+    }
+    if (event.key === '^') {
+      document.getElementById('6').classList.remove('key-inactive');
+      document.getElementById('6').classList.add('key-active');
+      return;
+    }
+    if (event.key === '&') {
+      document.getElementById('7').classList.remove('key-inactive');
+      document.getElementById('7').classList.add('key-active');
+      return;
+    }
+    if (event.key === '*') {
+      document.getElementById('8').classList.remove('key-inactive');
+      document.getElementById('8').classList.add('key-active');
+      return;
+    }
+    if (event.key === '(') {
+      document.getElementById('9').classList.remove('key-inactive');
+      document.getElementById('9').classList.add('key-active');
+      return;
+    }
+    if (event.key === ')') {
+      document.getElementById('0').classList.remove('key-inactive');
+      document.getElementById('0').classList.add('key-active');
+      return;
+    }
+    if (event.key === '_') {
+      document.getElementById('-').classList.remove('key-inactive');
+      document.getElementById('-').classList.add('key-active');
+      return;
+    }
+    if (event.key === '+') {
+      document.getElementById('=').classList.remove('key-inactive');
+      document.getElementById('=').classList.add('key-active');
+      return;
+    }
+    if (event.key === '{') {
+      document.getElementById('[').classList.remove('key-inactive');
+      document.getElementById('[').classList.add('key-active');
+      return;
+    }
+    if (event.key === '}') {
+      document.getElementById(']').classList.remove('key-inactive');
+      document.getElementById(']').classList.add('key-active');
+      return;
+    }
+    if (event.key === '|') {
+      document.getElementById('\\').classList.remove('key-inactive');
+      document.getElementById('\\').classList.add('key-active');
+      return;
+    }
+    if (event.key === ':') {
+      document.getElementById(';').classList.remove('key-inactive');
+      document.getElementById(';').classList.add('key-active');
+      return;
+    }
+    if (event.key === '"') {
+      document.getElementById("'").classList.remove('key-inactive');
+      document.getElementById("'").classList.add('key-active');
+      return;
+    }
+    if (event.key === '<') {
+      document.getElementById(',').classList.remove('key-inactive');
+      document.getElementById(',').classList.add('key-active');
+      return;
+    }
+    if (event.key === '>') {
+      document.getElementById('.').classList.remove('key-inactive');
+      document.getElementById('.').classList.add('key-active');
+      return;
+    }
+    if (event.key === '?') {
+      document.getElementById('/').classList.remove('key-inactive');
+      document.getElementById('/').classList.add('key-active');
+      return;
+    }
+
     const keyPressDown = document.getElementById(event.key.toLowerCase());
     keyPressDown.classList.remove('key-inactive');
     keyPressDown.classList.add('key-active');
@@ -344,7 +577,7 @@ window.onload = function onLoader() {
       shiftLeft.classList.add('key-inactive');
       for (let i = 0; i < keys.length; i += 1) {
         if (!keys[i].classList.contains('key-moded')) {
-          keys[i].innerText = keys[i].innerText.toLowerCase();
+          keys[i].innerText = keys[i].id;
         }
       }
       return setTimeout(() => {
@@ -356,7 +589,7 @@ window.onload = function onLoader() {
       shiftRight.classList.add('key-inactive');
       for (let i = 0; i < keys.length; i += 1) {
         if (!keys[i].classList.contains('key-moded')) {
-          keys[i].innerText = keys[i].innerText.toLowerCase();
+          keys[i].innerText = keys[i].id;
         }
       }
       return setTimeout(() => {
@@ -424,6 +657,134 @@ window.onload = function onLoader() {
       return setTimeout(() => {
       }, 300);
     }
+
+    if (event.key === '~') {
+      document.getElementById('`').classList.remove('key-active');
+      document.getElementById('`').classList.add('key-inactive');
+      return setTimeout(() => {
+      }, 300);
+    }
+    if (event.key === '!') {
+      document.getElementById('1').classList.remove('key-active');
+      document.getElementById('1').classList.add('key-inactive');
+      return setTimeout(() => {
+      }, 300);
+    }
+    if (event.key === '@') {
+      document.getElementById('2').classList.remove('key-active');
+      document.getElementById('2').classList.add('key-inactive');
+      return setTimeout(() => {
+      }, 300);
+    }
+    if (event.key === '#') {
+      document.getElementById('3').classList.remove('key-active');
+      document.getElementById('3').classList.add('key-inactive');
+      return setTimeout(() => {
+      }, 300);
+    }
+    if (event.key === '$') {
+      document.getElementById('4').classList.remove('key-active');
+      document.getElementById('4').classList.add('key-inactive');
+      return setTimeout(() => {
+      }, 300);
+    }
+    if (event.key === '%') {
+      document.getElementById('5').classList.remove('key-active');
+      document.getElementById('5').classList.add('key-inactive');
+      return setTimeout(() => {
+      }, 300);
+    }
+    if (event.key === '^') {
+      document.getElementById('6').classList.remove('key-active');
+      document.getElementById('6').classList.add('key-inactive');
+      return setTimeout(() => {
+      }, 300);
+    }
+    if (event.key === '&') {
+      document.getElementById('7').classList.remove('key-active');
+      document.getElementById('7').classList.add('key-inactive');
+      return setTimeout(() => {
+      }, 300);
+    }
+    if (event.key === '*') {
+      document.getElementById('8').classList.remove('key-active');
+      document.getElementById('8').classList.add('key-inactive');
+      return setTimeout(() => {
+      }, 300);
+    }
+    if (event.key === '(') {
+      document.getElementById('9').classList.remove('key-active');
+      document.getElementById('9').classList.add('key-inactive');
+      return setTimeout(() => {
+      }, 300);
+    }
+    if (event.key === ')') {
+      document.getElementById('0').classList.remove('key-active');
+      document.getElementById('0').classList.add('key-inactive');
+      return setTimeout(() => {
+      }, 300);
+    }
+    if (event.key === '_') {
+      document.getElementById('-').classList.remove('key-active');
+      document.getElementById('-').classList.add('key-inactive');
+      return setTimeout(() => {
+      }, 300);
+    }
+    if (event.key === '+') {
+      document.getElementById('=').classList.remove('key-active');
+      document.getElementById('=').classList.add('key-inactive');
+      return setTimeout(() => {
+      }, 300);
+    }
+    if (event.key === '{') {
+      document.getElementById('[').classList.remove('key-active');
+      document.getElementById('[').classList.add('key-inactive');
+      return setTimeout(() => {
+      }, 300);
+    }
+    if (event.key === '}') {
+      document.getElementById(']').classList.remove('key-active');
+      document.getElementById(']').classList.add('key-inactive');
+      return setTimeout(() => {
+      }, 300);
+    }
+    if (event.key === '|') {
+      document.getElementById('\\').classList.remove('key-active');
+      document.getElementById('\\').classList.add('key-inactive');
+      return setTimeout(() => {
+      }, 300);
+    }
+    if (event.key === ':') {
+      document.getElementById(';').classList.remove('key-active');
+      document.getElementById(';').classList.add('key-inactive');
+      return setTimeout(() => {
+      }, 300);
+    }
+    if (event.key === '"') {
+      document.getElementById("'").classList.remove('key-active');
+      document.getElementById("'").classList.add('key-inactive');
+      return setTimeout(() => {
+      }, 300);
+    }
+    if (event.key === '<') {
+      document.getElementById(',').classList.remove('key-active');
+      document.getElementById(',').classList.add('key-inactive');
+      return setTimeout(() => {
+      }, 300);
+    }
+    if (event.key === '>') {
+      document.getElementById('.').classList.remove('key-active');
+      document.getElementById('.').classList.add('key-inactive');
+      return setTimeout(() => {
+      }, 300);
+    }
+    if (event.key === '?') {
+      document.getElementById('/').classList.remove('key-active');
+      document.getElementById('/').classList.add('key-inactive');
+      return setTimeout(() => {
+      }, 300);
+    }
+
     const keyPressUp = document.getElementById(event.key.toLowerCase());
 
     if (event.code === 'CapsLock') {
