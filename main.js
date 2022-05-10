@@ -79,6 +79,7 @@ body.insertAdjacentHTML('afterbegin', `
     <div class="key ctrl-right key-moded"><span>Ctrl</span></div>
   </div>
   </div>
+  <div class="description">Клавиатура создана в операционной системе <b>Windows</b></div>
   </div>`);
 
 const txtInput = document.querySelector('.text');
@@ -385,11 +386,13 @@ window.onload = function onLoader() {
       return;
     }
     if (event.code === 'AltLeft') {
+      event.preventDefault();
       altLeft.classList.remove('key-inactive');
       altLeft.classList.add('key-active');
       return;
     }
     if (event.code === 'AltRight') {
+      event.preventDefault();
       altRight.classList.remove('key-inactive');
       altRight.classList.add('key-active');
       return;
@@ -622,6 +625,7 @@ window.onload = function onLoader() {
       }, 300);
     }
     if (event.code === 'AltLeft') {
+      event.preventDefault();
       altLeft.classList.remove('key-active');
       altLeft.classList.add('key-inactive');
       return setTimeout(() => {
@@ -629,6 +633,7 @@ window.onload = function onLoader() {
       }, 300);
     }
     if (event.code === 'AltRight') {
+      event.preventDefault();
       altRight.classList.remove('key-active');
       altRight.classList.add('key-inactive');
       return setTimeout(() => {
