@@ -212,6 +212,8 @@ window.onload = function onLoader() {
     }
     if (event.code === 'Tab') {
       txtInput.focus();
+      event.preventDefault();
+      txtInput.value += '\t';
       tab.classList.remove('key-inactive');
       tab.classList.add('key-active');
       return;
@@ -267,21 +269,33 @@ window.onload = function onLoader() {
       return;
     }
     if (event.code === 'ArrowUp') {
+      txtInput.focus();
+      event.preventDefault();
+      txtInput.value += '▲';
       arrowUp.classList.remove('key-inactive');
       arrowUp.classList.add('key-active');
       return;
     }
     if (event.code === 'ArrowDown') {
+      txtInput.focus();
+      event.preventDefault();
+      txtInput.value += '▼';
       arrowDown.classList.remove('key-inactive');
       arrowDown.classList.add('key-active');
       return;
     }
     if (event.code === 'ArrowLeft') {
+      txtInput.focus();
+      event.preventDefault();
+      txtInput.value += '◄';
       arrowLeft.classList.remove('key-inactive');
       arrowLeft.classList.add('key-active');
       return;
     }
     if (event.code === 'ArrowRight') {
+      txtInput.focus();
+      event.preventDefault();
+      txtInput.value += '►';
       arrowRight.classList.remove('key-inactive');
       arrowRight.classList.add('key-active');
       return;
