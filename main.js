@@ -426,7 +426,7 @@ window.onload = function onLoader() {
       arrowRight.classList.add('key-active');
       return;
     }
-    if (event.code === 'F12' || event.code === 'F11') {
+    if (event.code === 'F12' || event.code === 'F11' || event.code === 'F5') {
       return;
     }
 
