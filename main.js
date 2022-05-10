@@ -102,14 +102,36 @@ const keyboard = document.querySelector('.keyboard');
 
 window.onload = function onLoader() {
   // события мыши
-
   keyboard.addEventListener('mousedown', (event) => {
     if (event.target.closest('.key')) {
+      //capslock
+      if (event.target.closest('.capslock')) {
+        capsLock.classList.toggle('key-active');
+        if (!capsLock.classList.contains('key-active')) {
+          for (let i = 0; i < keys.length; i += 1) {
+            if (!keys[i].classList.contains('key-moded')) {
+              keys[i].innerText = keys[i].innerText.toLowerCase();
+            }
+          }
+        } else {
+          for (let i = 0; i < keys.length; i += 1) {
+            if (!keys[i].classList.contains('key-moded')) {
+              keys[i].innerText = keys[i].getAttribute('uppercase');
+            }
+          }
+        }
+        return;
+      }
+
       event.target.closest('.key').classList.remove('key-inactive');
       event.target.closest('.key').classList.add('key-active');
 
       if (event.target.closest('.tab')) {
         txtInput.value += '\t';
+        return;
+      }
+      if (event.target.closest('.space')) {
+        txtInput.value += ' ';
         return;
       }
       if (event.target.closest('.enter')) {
@@ -123,16 +145,28 @@ window.onload = function onLoader() {
         return;
       }
       if (event.target.closest('.delete')) {
-        txtInput.value += '???';
+        if (txtInput.selectionStart === txtInput.selectionEnd) {
+          txtInput.setRangeText('', txtInput.selectionStart, txtInput.selectionEnd + 1);
+        }
+        return;
+      }
+      if (event.target.closest('.backspace')) {
+        if (txtInput.selectionStart === txtInput.selectionEnd) {
+          txtInput.setRangeText('', txtInput.selectionStart - 1, txtInput.selectionEnd);
+        }
         return;
       }
 
-      txtInput.value += event.target.closest('.key').id;
+      txtInput.value += event.target.closest('.key').innerText;
     }
   });
 
   keyboard.addEventListener('mouseup', (event) => {
     if (event.target.closest('.key')) {
+      txtInput.focus();
+      if (event.target.closest('.capslock')) {
+        return;
+      }
       event.target.closest('.key').classList.remove('key-active');
       event.target.closest('.key').classList.add('key-inactive');
     }
