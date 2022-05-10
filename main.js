@@ -187,6 +187,7 @@ window.onload = function onLoader() {
 
   window.addEventListener('keydown', (event) => {
     txtInput.focus();
+
     if (event.code === 'Space') {
       space.classList.remove('key-inactive');
       space.classList.add('key-active');
@@ -549,8 +550,11 @@ window.onload = function onLoader() {
       document.getElementById('Enter').classList.add('key-active');
       return;
     }
-
     const keyPressDown = document.getElementById(event.key.toLowerCase());
+    // фикс ошибки на ру
+    if (!keyPressDown) {
+      return;
+    }
     keyPressDown.classList.remove('key-inactive');
     keyPressDown.classList.add('key-active');
   });
@@ -670,155 +674,134 @@ window.onload = function onLoader() {
     }
 
     if (event.code === 'F12' || event.code === 'F11') {
-      return setTimeout(() => {
-      }, 300);
+      return setTimeout(() => {}, 300);
     }
 
     if (event.key === '~') {
       document.getElementById('`').classList.remove('key-active');
       document.getElementById('`').classList.add('key-inactive');
-      return setTimeout(() => {
-      }, 300);
+      return setTimeout(() => {}, 300);
     }
     if (event.key === '!') {
       document.getElementById('1').classList.remove('key-active');
       document.getElementById('1').classList.add('key-inactive');
-      return setTimeout(() => {
-      }, 300);
+      return setTimeout(() => {}, 300);
     }
     if (event.key === '@') {
       document.getElementById('2').classList.remove('key-active');
       document.getElementById('2').classList.add('key-inactive');
-      return setTimeout(() => {
-      }, 300);
+      return setTimeout(() => {}, 300);
     }
     if (event.key === '#') {
       document.getElementById('3').classList.remove('key-active');
       document.getElementById('3').classList.add('key-inactive');
-      return setTimeout(() => {
-      }, 300);
+      return setTimeout(() => {}, 300);
     }
     if (event.key === '$') {
       document.getElementById('4').classList.remove('key-active');
       document.getElementById('4').classList.add('key-inactive');
-      return setTimeout(() => {
-      }, 300);
+      return setTimeout(() => {}, 300);
     }
     if (event.key === '%') {
       document.getElementById('5').classList.remove('key-active');
       document.getElementById('5').classList.add('key-inactive');
-      return setTimeout(() => {
-      }, 300);
+      return setTimeout(() => {}, 300);
     }
     if (event.key === '^') {
       document.getElementById('6').classList.remove('key-active');
       document.getElementById('6').classList.add('key-inactive');
-      return setTimeout(() => {
-      }, 300);
+      return setTimeout(() => {}, 300);
     }
     if (event.key === '&') {
       document.getElementById('7').classList.remove('key-active');
       document.getElementById('7').classList.add('key-inactive');
-      return setTimeout(() => {
-      }, 300);
+      return setTimeout(() => {}, 300);
     }
     if (event.key === '*') {
       document.getElementById('8').classList.remove('key-active');
       document.getElementById('8').classList.add('key-inactive');
-      return setTimeout(() => {
-      }, 300);
+      return setTimeout(() => {}, 300);
     }
     if (event.key === '(') {
       document.getElementById('9').classList.remove('key-active');
       document.getElementById('9').classList.add('key-inactive');
-      return setTimeout(() => {
-      }, 300);
+      return setTimeout(() => {}, 300);
     }
     if (event.key === ')') {
       document.getElementById('0').classList.remove('key-active');
       document.getElementById('0').classList.add('key-inactive');
-      return setTimeout(() => {
-      }, 300);
+      return setTimeout(() => {}, 300);
     }
     if (event.key === '_') {
       document.getElementById('-').classList.remove('key-active');
       document.getElementById('-').classList.add('key-inactive');
-      return setTimeout(() => {
-      }, 300);
+      return setTimeout(() => {}, 300);
     }
     if (event.key === '+') {
       document.getElementById('=').classList.remove('key-active');
       document.getElementById('=').classList.add('key-inactive');
-      return setTimeout(() => {
-      }, 300);
+      return setTimeout(() => {}, 300);
     }
     if (event.key === '{') {
       document.getElementById('[').classList.remove('key-active');
       document.getElementById('[').classList.add('key-inactive');
-      return setTimeout(() => {
-      }, 300);
+      return setTimeout(() => {}, 300);
     }
     if (event.key === '}') {
       document.getElementById(']').classList.remove('key-active');
       document.getElementById(']').classList.add('key-inactive');
-      return setTimeout(() => {
-      }, 300);
+      return setTimeout(() => {}, 300);
     }
     if (event.key === '|') {
       document.getElementById('\\').classList.remove('key-active');
       document.getElementById('\\').classList.add('key-inactive');
-      return setTimeout(() => {
-      }, 300);
+      return setTimeout(() => {}, 300);
     }
     if (event.key === ':') {
       document.getElementById(';').classList.remove('key-active');
       document.getElementById(';').classList.add('key-inactive');
-      return setTimeout(() => {
-      }, 300);
+      return setTimeout(() => {}, 300);
     }
     if (event.key === '"') {
       document.getElementById("'").classList.remove('key-active');
       document.getElementById("'").classList.add('key-inactive');
-      return setTimeout(() => {
-      }, 300);
+      return setTimeout(() => {}, 300);
     }
     if (event.key === '<') {
       document.getElementById(',').classList.remove('key-active');
       document.getElementById(',').classList.add('key-inactive');
-      return setTimeout(() => {
-      }, 300);
+      return setTimeout(() => {}, 300);
     }
     if (event.key === '>') {
       document.getElementById('.').classList.remove('key-active');
       document.getElementById('.').classList.add('key-inactive');
-      return setTimeout(() => {
-      }, 300);
+      return setTimeout(() => {}, 300);
     }
     if (event.key === '?') {
       document.getElementById('/').classList.remove('key-active');
       document.getElementById('/').classList.add('key-inactive');
-      return setTimeout(() => {
-      }, 300);
+      return setTimeout(() => {}, 300);
     }
 
     if (event.key === 'Backspace') {
       document.getElementById('Backspace').classList.remove('key-active');
       document.getElementById('Backspace').classList.add('key-inactive');
-      return setTimeout(() => {
-      }, 300);
+      return setTimeout(() => {}, 300);
     }
     if (event.key === 'Enter') {
       document.getElementById('Enter').classList.remove('key-active');
       document.getElementById('Enter').classList.add('key-inactive');
-      return setTimeout(() => {
-      }, 300);
+      return setTimeout(() => {}, 300);
     }
 
     const keyPressUp = document.getElementById(event.key.toLowerCase());
 
     if (event.code === 'CapsLock') {
-      return setTimeout(() => {
-      }, 300);
+      return setTimeout(() => {}, 300);
+    }
+    // фикс ошибки на ру
+    if (!keyPressUp) {
+      return setTimeout(() => {}, 300);
     }
     keyPressUp.classList.remove('key-active');
     keyPressUp.classList.add('key-inactive');
