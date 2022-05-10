@@ -31,7 +31,7 @@ body {
 
   &:focus {
     outline: none;
-    box-shadow: 0px 10px 17px 1px rgba(34, 60, 80, 0.20);
+    box-shadow: 0px 8px 17px 1px rgba(34, 60, 80, 0.10);
   }
 }
 
@@ -109,21 +109,5 @@ body {
     box-shadow: 0px 0px 17px 4px rgba(34, 60, 80, 0.15);
     color: #fff;
     background-color: rgb(106, 97, 235);
-  }
-}
-
-.key-inactive {
-  animation: key-animation 0.4s forwards;
-}
-
-@keyframes key-animation {
-  0% {
-    color: #fff;
-    background-color: rgb(106, 97, 235);
-  }
-
-  100% {
-    color: #000;
-    background-color: rgb(255, 255, 255);
   }
 }
