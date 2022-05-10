@@ -276,6 +276,9 @@ window.onload = function onLoader() {
       arrowRight.classList.add('key-active');
       return;
     }
+    if (event.code === 'F12' || event.code === 'F11') {
+      return;
+    }
 
     const keyPressDown = document.getElementById(event.key);
     keyPressDown.classList.remove('key-inactive');
@@ -384,6 +387,10 @@ window.onload = function onLoader() {
       }, 300);
     }
 
+    if (event.code === 'F12' || event.code === 'F11') {
+      return setTimeout(() => {
+      }, 300);
+    }
     const keyPressUp = document.getElementById(event.key);
 
     keyPressUp.classList.remove('key-active');
